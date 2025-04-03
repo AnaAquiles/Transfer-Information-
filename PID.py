@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 2025
+
+@author: aaquiles
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import entropy
