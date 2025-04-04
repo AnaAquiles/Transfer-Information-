@@ -8,16 +8,7 @@ from sklearn.metrics import mutual_info_score
 
 
 def calculate_mutual_information(X_subset, O):
-    """
-    Calculate mutual information between a subset of X and output O.
     
-    Parameters:
-    X_subset (ndarray): 2D array where rows are samples and columns are variables in the subset.
-    O (ndarray): 1D array representing the output variable.
-    
-    Returns:
-    float: Mutual information between X_subset and O.
-    """
     if X_subset.ndim == 1:
         # If the subset is a single feature, mutual_info_score can be applied directly
         return mutual_info_score(X_subset, O)
@@ -29,16 +20,7 @@ def calculate_mutual_information(X_subset, O):
         return mi
 
 def degeneracy(X, O):
-    """
-    Compute the degeneracy D_N(X; O) as defined in Tononi et al. (1999), Eq. 2a.
-    
-    Parameters:
-    X (ndarray): 2D array where rows are samples and columns are system elements.
-    O (ndarray): 1D array representing the output variable.
-    
-    Returns:
-    float: Degeneracy D_N(X; O).
-    """
+  
     n = X.shape[1]
     MIP_X_O = calculate_mutual_information(X, O)
     
